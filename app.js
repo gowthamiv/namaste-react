@@ -15,7 +15,20 @@ console.log(header);
 const jsxHeading = <h1 id="heading" className="head" tabIndex="1">Namaste React using JSX!</h1> //this jsxHeading is React Element that is Object  
 console.log(jsxHeading);
 
+const Title = () => {
+    return <h1 className="head" tabIndex="5">Namaste React using JSX</h1>
+}
+
+//React Functional Component
+const HeaderComponent = () => (
+    <div id="container">
+        <Title />
+        <h1 className="heading">Namaste React Functional Component</h1>
+    </div>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //root.render(header);
-root.render(jsxHeading);
+//root.render(jsxHeading);
+root.render(<HeaderComponent />);
