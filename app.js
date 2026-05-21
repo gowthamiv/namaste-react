@@ -1,46 +1,21 @@
-   /* const headerElm = React.createElement(
-        "h1",
-        { id:"heading",xyx: "pqr" },
-        "Hello World from React!"
-    );
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-    console.log(headerElm);
+// React.createElement => creates Object => HtmlElement (when rendered)
+// Below is how we create React element using React
+const header = React.createElement(
+    "h1", 
+    { id: "heading"}, 
+    "Namaste React!");
+console.log(header);
 
-    const parent = React.createElement(
-        "h1",
-        { id:"heading",xyx: "pqr" },
-        "Hello World from React!"
-    ); */
+//JSX => HTML-like or XML-like syntax
+//Below is how we create React element using JSX
+//JSX => Babel transpiles it to 'React.createElement' => ReactElement-Js Object => HTMLElement (by render)
+const jsxHeading = <h1 id="heading" className="head" tabIndex="1">Namaste React using JSX!</h1> //this jsxHeading is React Element that is Object  
+console.log(jsxHeading);
 
-    /* creating a structure like this as follows ::
-        <div id="parent">
-            <div id="child1">
-                <h1></h1>
-                <h2></h2
-            </div>
-            <div id="child2">
-                <h1></h1>
-                <h2></h2>
-            </div>
-        </div>
-    */
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-    import React from "react";
-    import ReactDOM from "react-dom/client";
-   
-    const parent = React.createElement("div", {id:"parent"},[ 
-        React.createElement("div", {id:"child1"},[ 
-            React.createElement("h1",{},"This is Namaste React."), 
-            React.createElement("h2",{},"I am h2") 
-        ]), 
-        React.createElement("div",{id:"child2"},[ 
-            React.createElement("h1",{},"I am h1"), 
-            React.createElement("h2",{},"I am h2") 
-        ]) 
-    ]);
-
-    console.log(parent);
-
-    const rootElm = ReactDOM.createRoot(document.getElementById("root"));
-    // rootElm.render(headerElm);
-    rootElm.render(parent);
+//root.render(header);
+root.render(jsxHeading);
