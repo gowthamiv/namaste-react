@@ -15,14 +15,27 @@ console.log(header);
 const jsxHeading = <h1 id="heading" className="head" tabIndex="1">Namaste React using JSX!</h1> //this jsxHeading is React Element that is Object  
 console.log(jsxHeading);
 
+//Func Component returning jsx
 const Title = () => {
-    return <h1 className="head" tabIndex="5">Namaste React using JSX</h1>
+    return <h1 className="headC" tabIndex="5">Namaste React using JSX</h1>
 }
+
+const elem = <span>React Element</span>;
+//Normal JSX syntax
+const title = (
+    <h1 className="head" tabIndex="5">
+        {elem}
+        Namaste React using JSX
+    </h1>
+);
 
 //React Functional Component
 const HeaderComponent = () => (
     <div id="container">
         <Title />
+        <Title></Title>
+        {Title()}
+        {title}
         <h1 className="heading">Namaste React Functional Component</h1>
     </div>
 );
